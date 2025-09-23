@@ -1,33 +1,33 @@
+// src/users/schemas/user.schema.ts
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
-import { Role } from '../../common/interfaces/role.enum';
+import { HydratedDocument, Types } from 'mongoose';
 
 @Schema({ timestamps: true })
 export class User {
-  _id: string;
-
-  @Prop({ required: true, unique: true, lowercase: true, trim: true })
+  @Prop({ required: true, unique: true })
   username: string;
 
-  @Prop({ required: true })
-  password: string; // bcrypt hash
+  @Prop({ required: false, unique: true, sparse: true })
+  email?: string;
 
-  @Prop({ required: true, unique: true, lowercase: true, trim: true })
-  email: string;
+  @Prop()
+  password?: string;
 
-  @Prop({ trim: true })
+  @Prop({ enum: ['user','admin'], default: 'user' })
+  role: string;
+
+  @Prop({ type: String, index: true, sparse: true })
+  firebaseUid?: string;
+
+  @Prop({ type: String, index: true, sparse: true })
   phone?: string;
 
-  @Prop({ trim: true })
-  address?: string;
-
-  @Prop({ type: String, enum: Object.values(Role), default: Role.USER })
-  role: Role;
-
   @Prop({ default: false })
-  isVerified: boolean;
+  isVerified?: boolean;
 }
+
 export type UserDocument = HydratedDocument<User>;
 export const UserSchema = SchemaFactory.createForClass(User);
-//UserSchema.index({ email: 1 }, { unique: true });
-//UserSchema.index({ username: 1 }, { unique: true });
+
+// create index programmatically if desired:
+UserSchema.index({ firebaseUid: 1 }, { unique: true, sparse: true });
