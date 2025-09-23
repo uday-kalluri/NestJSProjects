@@ -7,7 +7,6 @@ import { AuthController } from './auth.controller';
 import { JwtStrategy } from './jwt.strategy';
 import { FirebaseService } from './firebase.service';
 import { FirebaseAuthHttpService } from './firebase-http.service';
-import { PreauthMiddleware } from './preauth.middleware';
 import { UsersModule } from '../users/users.module';
 
 @Module({
