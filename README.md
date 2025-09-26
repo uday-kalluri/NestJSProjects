@@ -1,98 +1,255 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+Loyalty App (NestJS)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+A NestJS loyalty-management backend using MongoDB (Mongoose) and Firebase Authentication (email/password + phone OTP).
+This single-file README contains everything you need to run, test, develop, secure, and push this project. Copy-paste the whole file into README.md in your repo root.
+Table of contents
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Requirements
 
-## Description
+Quick start (local)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Clone & branch workflow
 
-## Project setup
+Install dependencies
 
-```bash
-$ npm install
-```
+Environment variables (.env)
 
-## Compile and run the project
+Firebase emulator config (optional)
 
-```bash
-# development
-$ npm run start
+Start emulator and Mongo
 
-# watch mode
-$ npm run start:dev
+Start Nest app
 
-# production mode
-$ npm run start:prod
-```
+Swagger UI
 
-## Run tests
+Auth & OTP (emulator) — curl examples
 
-```bash
-# unit tests
-$ npm run test
+API examples (curl)
 
-# e2e tests
-$ npm run test:e2e
+Database notes & migration tips
 
-# test coverage
-$ npm run test:cov
-```
+Docker / docker-compose (optional)
 
-## Deployment
+Git & GitHub — push safely
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+CI / Testing / Health checks
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Security & best practices
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+Troubleshooting checklist
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Contributing
 
-## Resources
 
-Check out a few resources that may come in handy when working with NestJS:
+Requirements
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Node.js 18+ recommended
 
-## Support
+npm or yarn
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+MongoDB (local or remote)
 
-## Stay in touch
+Firebase CLI (npm i -g firebase-tools) for local emulator (optional)
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+jq for easy JSON parsing (optional, helpful)
 
-## License
+(Optional) Docker & docker-compose
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Quick start (local)
+Clone & branch workflow
+git clone git@github.com:uday-kalluri/NestJSProjects.git
+cd NestJSProjects/loyalty-app   # adjust if repo differs
+git checkout -b feat/local-setup
+
+Install dependencies
+npm install
+# or
+yarn install
+
+Environment variables (.env)
+
+Create .env from .env.example (do not commit .env).
+
+.env.example (copy into repo as .env.example):
+
+PORT=3000
+MONGO_URI=mongodb://localhost:27017/loyalty_app
+JWT_SECRET=supersecret
+JWT_EXPIRES=1h
+
+# Firebase (emulator)
+FIREBASE_AUTH_EMULATOR_HOST=localhost:9099
+FIREBASE_PROJECT_ID=fir-auth-local
+FIREBASE_WEB_API_KEY=fake-api-key
+
+# (Production only) path to service account JSON for firebase-admin
+# GOOGLE_APPLICATION_CREDENTIALS=/path/to/serviceAccountKey.json
+
+
+IMPORTANT: Never commit real serviceAccountKey.json or .env values.
+
+Firebase emulator config (optional)
+
+If you will use the Auth emulator, put a minimal firebase.json in project root:
+
+firebase.json
+
+{
+  "emulators": {
+    "auth": { "port": 9099 },
+    "ui": { "enabled": true, "port": 4000 }
+  }
+}
+
+Start emulator and Mongo
+
+Start MongoDB (local) however you normally do. Example (macOS, Homebrew):
+
+brew services start mongodb-community@6.0
+
+
+Start Firebase Auth emulator:
+
+firebase emulators:start --only auth
+# Open emulator UI: http://localhost:4000
+
+
+If you get No emulators to start, make sure firebase.json exists in the folder you run the command from.
+
+Start Nest app
+
+Export emulator env (same shell) before starting Nest so firebase-admin talks to emulator:
+
+export FIREBASE_AUTH_EMULATOR_HOST=localhost:9099
+export FIREBASE_PROJECT_ID=fir-auth-local
+npm run start:dev
+
+
+App runs at http://localhost:3000 by default.
+
+Swagger UI
+
+Enable Swagger in src/main.ts (example included below). After app start, open:
+
+http://localhost:3000/docs
+
+
+Use the Authorize button to paste Bearer <your_jwt> for protected endpoints.
+
+Swagger snippet to add to main.ts:
+
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { ValidationPipe } from '@nestjs/common';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
+  app.enableCors();
+
+  if (process.env.NODE_ENV !== 'production') {
+    const config = new DocumentBuilder()
+      .setTitle('Loyalty API')
+      .setDescription('Loyalty app APIs')
+      .setVersion('1.0')
+      .addBearerAuth({ type: 'http', scheme: 'bearer', bearerFormat: 'JWT' }, 'jwt')
+      .build();
+    const doc = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('docs', app, doc);
+    app.getHttpAdapter().get('/api-json', (req, res) => res.json(doc));
+  }
+
+  await app.listen(process.env.PORT ?? 3000);
+}
+bootstrap();
+
+Auth & OTP (emulator) — curl examples
+Create / sign up user (emulator)
+curl -s -X POST "http://localhost:9099/identitytoolkit.googleapis.com/v1/accounts:signUp?key=fake-api-key" \
+ -H "Content-Type: application/json" \
+ -d '{"email":"sandbox@example.com","password":"test1234","returnSecureToken":true}' | jq .
+
+Email sign-in (emulator)
+curl -s -X POST "http://localhost:9099/identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=fake-api-key" \
+ -H "Content-Type: application/json" \
+ -d '{"email":"sandbox@example.com","password":"test1234","returnSecureToken":true}' | jq .
+
+Phone OTP flow (emulator)
+
+Request sessionInfo:
+
+SESSION=$(curl -s -X POST "http://localhost:9099/identitytoolkit.googleapis.com/v1/accounts:sendVerificationCode?key=fake-api-key" \
+ -H "Content-Type: application/json" \
+ -d '{"phoneNumber":"+15551234567","recaptchaToken":"ignored"}' | jq -r .sessionInfo)
+echo $SESSION
+
+
+Find SMS code in emulator UI: http://localhost:4000 → Auth → recent requests (the UI shows the code, often 123456 in examples).
+
+Sign in and get idToken:
+
+IDTOKEN=$(curl -s -X POST "http://localhost:9099/identitytoolkit.googleapis.com/v1/accounts:signInWithPhoneNumber?key=fake-api-key" \
+  -H "Content-Type: application/json" \
+  -d "{\"sessionInfo\":\"${SESSION}\",\"code\":\"123456\"}" | jq -r .idToken)
+echo $IDTOKEN
+
+
+Exchange idToken with your Nest endpoint for app JWT:
+
+curl -s -X POST http://localhost:3000/auth/firebase-login -H "Content-Type: application/json" \
+ -d "{\"idToken\":\"${IDTOKEN}\"}" | jq .
+
+API examples (curl)
+
+Get current user's loyalty:
+
+curl -H "Authorization: Bearer ${APP_TOKEN}" http://localhost:3000/loyalties/me | jq .
+
+
+Admin list (needs admin JWT):
+
+curl -H "Authorization: Bearer ${ADMIN_TOKEN}" "http://localhost:3000/loyalties?skip=0&limit=50" | jq .
+
+
+Server-side OTP endpoints (if implemented):
+
+curl -X POST http://localhost:3000/auth/send-otp -H "Content-Type: application/json" \
+ -d '{"phoneNumber":"+15551234567"}' | jq .
+
+curl -X POST http://localhost:3000/auth/verify-otp -H "Content-Type: application/json" \
+ -d '{"sessionInfo":"<SESSION>","code":"123456"}' | jq .
+
+Database notes & migration tips
+
+Ensure userId in loyalties collection is an ObjectId, not string. If some docs store userId as string, convert them:
+
+Mongo shell:
+
+use loyalty_app;
+db.loyalties.find().forEach(doc => {
+  if (typeof doc.userId === "string") {
+    db.loyalties.updateOne({_id: doc._id}, {$set: { userId: ObjectId(doc.userId) }});
+  }
+});
+
+
+Indexes recommended: firebaseUid, email (sparse), username (unique), userId (for loyalties).
+
+When running $lookup aggregations, ensure the joined fields are the same type (ObjectId ↔ ObjectId). If not, use pipeline $addFields + $toObjectId or convert DB docs.
+
+CI / Testing / Health checks
+
+Unit tests: npm run test
+
+E2E: npm run test:e2e (if configured)
+
+CI: add GitHub Actions to run lint/tests on PR.
+
+Health checks using @nestjs/terminus:
+
+GET /health — readiness (DB, Firebase, external)
+
+GET /health/live — liveness (basic)
+
+(Implement health module per Terminus docs; see earlier snippets.)
