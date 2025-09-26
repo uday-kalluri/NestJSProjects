@@ -77,6 +77,7 @@ Thumbs.db
 # Firebase / credentials (DO NOT commit service account keys)
 serviceAccountKey.json
 service-account.json
+firbaseServiceAccount.json
 *.pem
 *.key
 
